@@ -3,3 +3,6 @@ dist
 .DS_Store
 /.vscode
 /.editorconfig
+/package-lock.json
+/.eslintignore
+/.eslintrc.js

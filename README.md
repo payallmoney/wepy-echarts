@@ -7,8 +7,8 @@
 
 3, 运行微信web开发者工具 导入本工程
 # 如何单独使用组件
- 1, 下载https://github.com/ecomfe/echarts-for-weixin  , 将 ec-canvas 和 pages 目录放入 native\
- 2, 下载本工程 components\echarts.wpy , 放入components\
+ 1, 下载https://github.com/ecomfe/echarts-for-weixin  , 将 ec-canvas 和 pages 目录放入 native目录
+ 2, 下载本工程 components\echarts.wpy , 放入components目录
  3, 在page中引入
 
     import chart from '../../components/echarts';

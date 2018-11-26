@@ -6,3 +6,4 @@ dist
 /package-lock.json
 /.eslintignore
 /.eslintrc.js
+/.wepycache

@@ -100,7 +100,9 @@
         ]
       }
     };
-    wxml模版
+    
+ wxml模版
+   
     <template lang="wxml">
       <view class="echart">
         <chart :option.sync="option"  height="300px"></chart> 

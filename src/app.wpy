@@ -1,0 +1,41 @@
+<style lang="less" src="app.less"></style>
+<template lang="wxml" src="app.wxml"></template>
+<script>
+  import wepy from 'wepy';
+  import 'wepy-async-function';
+
+  export default class extends wepy.app {
+    constructor() {
+      super();
+      this.use('promisify');
+    }
+    config = {
+      pages: ['pages/index/index', 'pages/test/test'],
+      window: {
+        backgroundTextStyle: 'dark',
+        navigationBarBackgroundColor: '#eff3f2',
+        navigationBarTitleText: 'wepy-echarts',
+        navigationBarTextStyle: 'black'
+      },
+      tabBar: {
+        list: [
+          {
+            pagePath: 'pages/index/index',
+            text: 'echarts'
+          },
+          {
+            pagePath: 'pages/test/test',
+            text: 'test-echarts'
+          }
+        ]
+      },
+      plugins: {}
+    };
+    onLaunch() {}
+    globalData = {
+      userInfo: null
+    };
+    globalData = {};
+    constant = {};
+  }
+</script>

@@ -1,0 +1,31 @@
+ <style lang="less">
+  .chart {
+    width: 100%;
+    padding: 20px;
+  }
+</style>
+<template lang="wxml">
+<view class="chart"> 
+  test
+
+</view>
+</template>
+<script>
+  import wepy from 'wepy';
+
+  const app = getApp();
+  export default class extends wepy.page {
+    config = {
+      usingComponents: {}
+    };
+    components = {};
+    /**
+     * 页面的初始数据
+     */
+    data = {};
+    /**
+     * 生命周期函数--监听页面加载
+     */
+    onLoad() {}
+  }
+</script>

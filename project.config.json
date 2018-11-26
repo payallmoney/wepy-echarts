@@ -1,0 +1,15 @@
+{
+	"description": "wepy-echarts",
+	"setting": {
+		"urlCheck": true,
+		"es6": false,
+		"postcss": false,
+		"minified": false,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"appid": "wepy-echarts",
+	"projectname": "wepy-echarts",
+	"miniprogramRoot": "dist/",
+	"condition": {}
+}

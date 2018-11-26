@@ -11,6 +11,7 @@
 <script>
 	import wepy from 'wepy';
 	import echarts from '../native/echarts/ec-canvas/echarts';
+	var chart;
 	export default class extends wepy.component {
 	  config = {
 	    usingComponents: {
@@ -30,25 +31,20 @@
 	  computed = {};
 	  watch = {
 	    option(newVal, oldVal) {
-	      if (this.chart) this.chart.setOption(newVal);
+	      if (chart && newVal) chart.setOption(newVal);
 	    }
 	  };
 	  initChart(_this) {
 	    return function(canvas, width, height) {
 	      var option = _this.option;
-	      console.log(parseFloat(_this.width), parseFloat(_this.height));
 	      width = wx.getSystemInfoSync().windowWidth - 20;
 	      height =
 	        parseFloat(_this.height) || wx.getSystemInfoSync().windowHeight / 2;
-	      var chart = echarts.init(canvas, null, {
+	      chart = echarts.init(canvas, null, {
 	        width: width,
 	        height: height
 	      });
 	      canvas.setChart(chart);
-	      _this.chart = chart;
-	      _this.canvas = canvas;
-	      _this.width = width;
-	      _this.height = height;
 	      chart.setOption(option);
 	      return chart;
 	    };

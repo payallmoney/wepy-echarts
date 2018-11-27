@@ -13,7 +13,20 @@
  
  2, 下载本工程 components\echarts.wpy , 放入components目录
  
- 3, 在page wpy文件中引入
+ 3, 代码
+    
+        
+ wxml模版
+   
+    <template lang="wxml">
+      <view class="echart">
+        <chart :option.sync="option"  canvasId="aaa" height="300px"></chart> 
+        <chart1 :option.sync="option1" canvasId="bbb" height="300px"></chart1> 
+        <chart2 :option.sync="option2" canvasId="ccc"  height="300px"></chart2> 
+      </view>
+    </template>
+    
+ page wpy文件中引入
     
     import chart from '../../components/echarts';
     ...
@@ -102,15 +115,6 @@
         ]
       }
     };
-    
- wxml模版
-   
-    <template lang="wxml">
-      <view class="echart">
-        <chart :option.sync="option"  canvasId="aaa" height="300px"></chart> 
-        <chart1 :option.sync="option1" canvasId="bbb" height="300px"></chart1> 
-        <chart2 :option.sync="option2" canvasId="ccc"  height="300px"></chart2> 
-      </view>
-    </template>
+
     
     

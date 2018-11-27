@@ -1,54 +1,56 @@
 <style lang="less" >
-	ec-canvas {
-	  width: 100%;
-	  height: 100%;
-	  display: block;
-	}
+  ec-canvas,
+  .ec-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    box-sizing: border-box;
+  }
 </style>
 <template lang="wxml" > 
-		<ec-canvas  style="width:{{width}};height:{{height}}"  ec="{{ ec }}"></ec-canvas>
+		<ec-canvas id="{{canvasId}}"   style="width:{{width}};height:{{height}}"  ec="{{ ec }}"></ec-canvas>
 </template>
 <script>
-	import wepy from 'wepy';
-	import echarts from '../native/echarts/ec-canvas/echarts';
-	var chart;
-	export default class extends wepy.component {
-	  config = {
-	    usingComponents: {
-	      'ec-canvas': '../native/echarts/ec-canvas/ec-canvas'
-	    }
-	  };
-	  props = { option: Object, height: String, width: String };
-	  data = {
-	    ec: {
-	      onInit: this.initChart(this)
-	    },
-	    chart: null,
-	    canvas: null,
-	    width: null,
-	    height: null
-	  };
-	  computed = {};
-	  watch = {
-	    option(newVal, oldVal) {
-	      if (chart && newVal) chart.setOption(newVal);
-	    }
-	  };
-	  initChart(_this) {
-	    return function(canvas, width, height) {
-	      var option = _this.option;
-	      width = wx.getSystemInfoSync().windowWidth - 20;
-	      height =
-	        parseFloat(_this.height) || wx.getSystemInfoSync().windowHeight / 2;
-	      chart = echarts.init(canvas, null, {
-	        width: width,
-	        height: height
-	      });
-	      canvas.setChart(chart);
-	      chart.setOption(option);
-	      return chart;
-	    };
-	  }
-	  methods = {};
-	}
+  import wepy from 'wepy';
+  import echarts from '../native/echarts/ec-canvas/echarts';
+  var chart;
+  var ecComponent;
+  export default class extends wepy.component {
+    config = {
+      usingComponents: {
+        'ec-canvas': '../native/echarts/ec-canvas/ec-canvas'
+      }
+    };
+    props = { option: Object, height: String, width: String, canvasId: String };
+    data = {
+      ec: {
+        lazyLoad: true
+      }
+    };
+    watch = {
+      option(newVal, oldVal) {
+        if (newVal) {
+          ecComponent = this.$wxpage.selectComponent('#' + this.canvasId);
+          ecComponent.init(this.initChart(this));
+        }
+      }
+    };
+    onLoad() {}
+    initChart(_this) {
+      return function(canvas, width, height) {
+        var option = _this.option;
+        width = wx.getSystemInfoSync().windowWidth - 20;
+        height =
+          parseFloat(_this.height) || wx.getSystemInfoSync().windowHeight / 2;
+        chart = echarts.init(canvas, null, {
+          width: width,
+          height: height
+        });
+        canvas.setChart(chart);
+        chart.setOption(option);
+        return chart;
+      };
+    }
+    methods = {};
+  }
 </script>

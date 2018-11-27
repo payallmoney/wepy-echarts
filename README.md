@@ -105,9 +105,9 @@
    
     <template lang="wxml">
       <view class="echart">
-        <chart :option.sync="option"  height="300px"></chart> 
-        <chart1 :option.sync="option1"  height="300px"></chart1> 
-        <chart2 :option.sync="option2"  height="300px"></chart2> 
+        <chart :option.sync="option"  canvasId="aaa" height="300px"></chart> 
+        <chart1 :option.sync="option1" canvasId="bbb" height="300px"></chart1> 
+        <chart2 :option.sync="option2" canvasId="ccc"  height="300px"></chart2> 
       </view>
     </template>
     

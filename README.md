@@ -1,5 +1,7 @@
 # wepy-echarts
 程序对https://github.com/ecomfe/echarts-for-weixin 进行封装 , 可以直接在wepy框架中使用
+# 最简单的使用方法:
+    <chart :option.sync="option"  canvasId="aaa" height="300px"></chart> 
 # 使用方法
 1, 下载本工程
 

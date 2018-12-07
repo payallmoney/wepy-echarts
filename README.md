@@ -5,9 +5,16 @@
 # 使用方法
 1, 下载本工程
 
-2, 参考wepy的安装
+2, npm install wepy-cli -g
 
-3, 运行微信web开发者工具 导入本工程
+3, cd wepy-echarts
+
+4, npm  install
+
+5, npm run dev 
+
+6, 运行微信web开发者工具 导入本工程
+
 # 如何单独使用组件
  1, 下载https://github.com/ecomfe/echarts-for-weixin  , 将 ec-canvas 和 pages 目录放入 native目录
  

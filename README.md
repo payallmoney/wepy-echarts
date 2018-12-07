@@ -13,7 +13,7 @@
 
 5, npm run dev 
 
-6, 运行微信web开发者工具 导入本工程
+6, 运行微信web开发者工具 导入本工程 , 填入可用的appid
 
 # 如何单独使用组件
  1, 下载https://github.com/ecomfe/echarts-for-weixin  , 将 ec-canvas 和 pages 目录放入 src\native\echarts目录
